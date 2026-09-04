@@ -1,0 +1,31 @@
+CLASS upstream provenance
+=========================
+
+Repository:
+https://github.com/lesgourg/class_public
+
+Release/tag:
+v3.3.4
+
+Commit:
+e85808324f51fc694d12e3ed7439552a3c3f9540
+
+Source preparation:
+The build source was produced from the upstream tracked-clean
+class_public tree using git archive at the commit above.
+
+Integration architecture:
+GEO is compiled as an external shared library and connected through
+a Cobaya Theory component.
+
+No modification of CLASS source code is required by this integration path.
+
+Validated isolated runtime:
+Python 3.12.3
+NumPy 1.26.4
+SciPy 1.13.1
+Cobaya 3.6.2
+classy 3.3.4.0
+
+Validation date:
+2026-09-04

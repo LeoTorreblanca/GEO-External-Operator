@@ -1,0 +1,56 @@
+theory:
+  classy:
+    extra_args:
+      non_linear: none
+
+  geo_hubble_theory.GEOHubbleTheory:
+    python_path: /home/leone/GEO-LIBGEO-EXTERNAL-TEST
+
+likelihood:
+  geo_hubble_consumer.GEOHubbleConsumer:
+    python_path: /home/leone/GEO-LIBGEO-EXTERNAL-TEST
+
+params:
+  omega_b:
+    value: 0.02237
+
+  omega_cdm:
+    value: 0.1200
+
+  H0:
+    value: 67.4
+
+  A_s:
+    value: 2.1e-9
+
+  n_s:
+    value: 0.965
+
+  tau_reio:
+    value: 0.054
+
+  H0_primitive_geo:
+    derived: true
+
+  H0_GEO:
+    derived: true
+
+  R_GEO:
+    derived: true
+
+  Phi_GEO:
+    derived: true
+
+  alpha_GEO:
+    derived: true
+
+  P_GEO:
+    derived: true
+
+sampler:
+  evaluate: {}
+
+debug: true
+stop_at_error: true
+
+output: clean_upstream_67_4

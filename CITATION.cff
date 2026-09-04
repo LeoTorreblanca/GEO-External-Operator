@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite this repository and the associated GEO framework publications."
+title: "GEO External Operator"
+version: 1.0.0
+date-released: 2026-09-04
+authors:
+  - family-names: Torreblanca
+    given-names: Leonel Hernán
+repository-code: "https://github.com/LeoTorreblanca/GEO-External-Operator"
+license: MIT

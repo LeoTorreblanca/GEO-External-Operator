@@ -1,0 +1,7 @@
+classy @ file:///home/leone/GEO-CLASS-CLEAN-PROVENANCE/class-v3.3.4-e858083
+Cython==3.3.0
+numpy==1.26.4
+packaging==26.3
+scipy==1.13.1
+setuptools==84.0.0
+wheel==0.48.0

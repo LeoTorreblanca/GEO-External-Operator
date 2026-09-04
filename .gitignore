@@ -1,0 +1,11 @@
+*.o
+*.a
+*.so
+*.pyc
+__pycache__/
+.venv/
+venv/
+*.1.txt
+*.updated.yaml
+*.input.yaml
+.DS_Store
