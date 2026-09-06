@@ -9,3 +9,6 @@ venv/
 *.updated.yaml
 *.input.yaml
 .DS_Store
+.venv-package-test/
+dist/
+site/

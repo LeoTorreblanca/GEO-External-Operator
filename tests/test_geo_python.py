@@ -1,95 +1,68 @@
-import ctypes
-from pathlib import Path
+import math
 
-LIB = (
-    Path.home()
-    / "GEO_CLASS"
-    / "geo_engine_public_v1"
-    / "libgeo_public.so"
-)
+import geo_external_operator as geo
 
-class GeoResult(ctypes.Structure):
-    _fields_ = [
-        ("eta", ctypes.c_double),
-        ("L", ctypes.c_double),
-        ("mu_eff", ctypes.c_double),
 
-        ("R", ctypes.c_double),
-        ("Phi", ctypes.c_double),
-        ("alpha", ctypes.c_double),
+def test_api_version():
+    assert geo.api_version() >= 1
 
-        ("projected_observable", ctypes.c_double),
-        ("projected_complementary", ctypes.c_double),
-        ("projected_latent", ctypes.c_double),
 
-        ("reconstructed_observable", ctypes.c_double),
-        ("reconstructed_complementary", ctypes.c_double),
-        ("reconstructed_latent", ctypes.c_double),
+def test_mu_eff_independent_from_eta():
+    result = geo.compute(
+        eta=0.6,
+        L=0.0,
+        mu_eff=0.81,
+    )
 
-        ("projection_norm_error", ctypes.c_double),
-        ("reconstruction_observable_error", ctypes.c_double),
-        ("reconstruction_complementary_error", ctypes.c_double),
-        ("reconstruction_latent_error", ctypes.c_double),
-    ]
+    assert math.isclose(
+        result.eta,
+        0.6,
+        rel_tol=0.0,
+        abs_tol=1e-15,
+    )
 
-geo = ctypes.CDLL(str(LIB))
+    assert math.isclose(
+        result.mu_eff,
+        0.81,
+        rel_tol=0.0,
+        abs_tol=1e-15,
+    )
 
-geo.geo_public_api_version.argtypes = []
-geo.geo_public_api_version.restype = ctypes.c_int
 
-geo.geo_public_compute.argtypes = [
-    ctypes.c_double,
-    ctypes.c_double,
-    ctypes.c_double,
-    ctypes.POINTER(GeoResult),
-]
+def test_canonical_radial_law():
+    result = geo.compute(
+        eta=0.6,
+        L=0.0,
+        mu_eff=0.81,
+    )
 
-geo.geo_public_compute.restype = ctypes.c_int
+    assert math.isclose(
+        result.R ** 3,
+        result.mu_eff,
+        rel_tol=0.0,
+        abs_tol=1e-12,
+    )
 
-result = GeoResult()
 
-status = geo.geo_public_compute(
-    0.6,
-    0.0,
-    0.81,
-    ctypes.byref(result),
-)
+def test_projection_norm_closure():
+    result = geo.compute(
+        eta=0.6,
+        L=0.0,
+        mu_eff=0.81,
+    )
 
-print("========================================")
-print(" PYTHON -> LIBGEO")
-print("========================================")
-print("API version =", geo.geo_public_api_version())
-print("status      =", status)
-print()
-print("eta         =", f"{result.eta:.15f}")
-print("mu_eff      =", f"{result.mu_eff:.15f}")
-print("R           =", f"{result.R:.15f}")
-print("R^3         =", f"{result.R**3:.15f}")
-print("Phi         =", f"{result.Phi:.15f}")
-print("alpha       =", f"{result.alpha:.15f}")
-print()
-print("P_O         =", f"{result.projected_observable:.15f}")
-print("P_C         =", f"{result.projected_complementary:.15f}")
-print()
-print("F_O rec     =", f"{result.reconstructed_observable:.15f}")
-print("F_C rec     =", f"{result.reconstructed_complementary:.15f}")
-print()
+    assert result.projection_norm_error < 1e-12
 
-if status != 0:
-    raise SystemExit("PYTHON -> LIBGEO = FAIL")
 
-if abs(result.R**3 - result.mu_eff) > 1e-12:
-    raise SystemExit("R^3 = mu_eff = FAIL")
+def test_reconstruction_closure():
+    result = geo.compute(
+        eta=0.6,
+        L=0.0,
+        mu_eff=0.81,
+    )
 
-if result.projection_norm_error > 1e-12:
-    raise SystemExit("projection norm = FAIL")
+    assert result.reconstruction_observable_error < 1e-12
 
-if result.reconstruction_observable_error > 1e-12:
-    raise SystemExit("observable reconstruction = FAIL")
+    assert result.reconstruction_complementary_error < 1e-12
 
-if result.reconstruction_complementary_error > 1e-12:
-    raise SystemExit("complementary reconstruction = FAIL")
-
-print("----------------------------------------")
-print("PYTHON -> LIBGEO = PASS")
-print("========================================")
+    assert result.reconstruction_latent_error < 1e-12
