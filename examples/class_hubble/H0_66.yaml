@@ -3,12 +3,10 @@ theory:
     extra_args:
       non_linear: none
 
-  geo_hubble_theory.GEOHubbleTheory:
-    python_path: /home/leone/GEO-LIBGEO-EXTERNAL-TEST
+  geo_external_operator.cobaya.GEOHubbleTheory: {}
 
 likelihood:
-  geo_hubble_consumer.GEOHubbleConsumer:
-    python_path: /home/leone/GEO-LIBGEO-EXTERNAL-TEST
+  geo_external_operator.cobaya_consumer.GEOHubbleConsumer: {}
 
 params:
   omega_b:
