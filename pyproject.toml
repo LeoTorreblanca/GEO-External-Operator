@@ -54,6 +54,7 @@ Issues = "https://github.com/LeoTorreblanca/GEO-External-Operator/issues"
 [tool.scikit-build]
 wheel.packages = ["src/geo_external_operator"]
 cmake.version = ">=3.15"
+
 sdist.include = [
     "src/*.c",
     "include/*.h",
@@ -64,6 +65,17 @@ sdist.include = [
     "provenance/**",
     "CITATION.cff",
     "VERSION"
+]
+
+sdist.exclude = [
+    ".venv",
+    ".venv-*",
+    "dist",
+    "build",
+    "site",
+    ".pytest_cache",
+    "**/__pycache__",
+    "*.egg-info"
 ]
 
 [tool.pytest.ini_options]
