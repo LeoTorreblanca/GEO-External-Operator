@@ -113,10 +113,19 @@ The Python interface is a binding to this public native API rather than an indep
 
 ## Optional integrations
 
-The core Python package does not require Cobaya.
 
-Cobaya support is installed separately with:
+## Application boundary
 
-    pip install "geo-external-operator[cobaya]"
+The Python API exposes the general GEO operator directly.
 
-The Cobaya adapter consumes the same public GEO engine used by this Python API.
+Application-specific cosmological adapters are maintained separately from
+the core package.
+
+The core call is based on explicit inputs such as
+
+    eta
+    L
+    mu_eff
+
+and returns the radial, spectral, projected, reconstructed, and numerical
+closure quantities documented above.

@@ -28,23 +28,25 @@ The engine does not impose a universal identity between eta and mu_eff.
 
 Mappings between a physical system and mu_eff belong to the corresponding application and require separate justification.
 
-## Hubble application
+## Application-specific mappings
 
-The current Hubble adapter uses the application-specific hypothesis:
+The core operator does not impose a preferred physical identification for
 
-    mu_H = eta
+\[
+\mu_{\mathrm{eff}}.
+\]
 
-with:
+Mappings from an external physical system into the GEO effective state
+belong to application-specific projects and require separate
+justification.
 
-    eta = 0.6
+No application-specific mapping should be interpreted as a universal
+identity of the GEO mathematical engine.
 
-This relation is specific to that realization.
-
-It must not be interpreted as the general GEO definition of mu_eff.
 
 ## Cosmological interoperability
 
-The operator can be used externally with cosmological software such as Cobaya and CLASS.
+The operator can be used externally by scientific software through its public C and Python interfaces.
 
 Software interoperability means that quantities can be exchanged through defined interfaces.
 

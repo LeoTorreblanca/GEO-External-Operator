@@ -34,22 +34,11 @@ Run:
 
     pytest -v
 
-Without Cobaya installed, the expected behavior is:
+The core regression suite is designed to run without any
+application-specific cosmological adapter.
 
-    5 core tests passed
-    1 Cobaya integration test skipped
-
-## Complete Cobaya test
-
-Install the optional Cobaya dependencies:
-
-    pip install -e ".[test,cobaya]"
-
-Run:
-
-    pytest -v
-
-The complete current suite contains six tests.
+The expected result is that all core operator tests execute directly
+against the public C/Python engine.
 
 ## Wheel distribution
 
@@ -93,7 +82,7 @@ The automated tests currently verify:
 
     reconstruction closure
 
-    Cobaya Hubble adapter consistency
+    public Python API and native-engine consistency
 
 Projection and reconstruction closure are expected to be satisfied within floating-point precision.
 

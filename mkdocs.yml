@@ -14,6 +14,5 @@ nav:
   - Quick Start: quickstart.md
   - Mathematical Model: mathematical_model.md
   - Python API: python_api.md
-  - Cobaya Integration: cobaya.md
   - Reproducibility: reproducibility.md
   - Limitations: limitations.md
