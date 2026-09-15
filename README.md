@@ -40,10 +40,11 @@ The core calculation may be summarized as
 The operator is application-independent.
 
 A physical or cosmological project may supply a value of
-\(\mu_{\mathrm{eff}}\), but the core engine does not decide what physical
+$\mu_{\mathrm{eff}}$, but the core engine does not decide what physical
 system that value represents.
 
 ---
+**Independent reproduction:** [Third-Party Quickstart](docs/third_party_quickstart.md)
 
 # 2. Relationship to the GEO framework
 
@@ -97,9 +98,9 @@ The public operator receives three principal state inputs:
 
 where:
 
-- \(\eta\) is the GEO structural partition parameter;
-- \(L\) is the latent/loss component;
-- \(\mu_{\mathrm{eff}}\) is the effective state supplied by an
+- $\eta$ is the GEO structural partition parameter;
+- $L$ is the latent/loss component;
+- $\mu_{\mathrm{eff}}$ is the effective state supplied by an
   application.
 
 For the canonical conservative GEO configuration,
@@ -138,7 +139,7 @@ with
 T=1.
 \]
 
-For a supplied \(\eta\),
+For a supplied $\eta$,
 
 \[
 A=\eta
@@ -220,7 +221,6 @@ The current GEO radial/effective-state relation is
 \[
 \boxed{
 R^3=\mu_{\mathrm{eff}}
-}
 \]
 
 or equivalently
@@ -584,8 +584,8 @@ The demonstration reports:
 - input state;
 - radial response;
 - radial closure error;
-- \(\Phi\);
-- \(\alpha\);
+- $\Phi$;
+- $\alpha$;
 - projected state;
 - reconstructed state;
 - projection norm error;
@@ -607,7 +607,7 @@ It also checks projection and reconstruction closure.
 
 # 15. Example of radial-state independence
 
-The separation between \(\eta\) and \(\mu_{\mathrm{eff}}\) can be tested
+The separation between $\eta$ and $\mu_{\mathrm{eff}}$ can be tested
 directly.
 
 For example, keep
@@ -658,7 +658,7 @@ R
 0.932323170115423\ldots
 \]
 
-The structural parameter \(\eta\) has not changed.
+The structural parameter $\eta$ has not changed.
 
 This demonstrates the software-level separation between the structural
 and effective-state layers.
