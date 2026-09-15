@@ -335,7 +335,7 @@ $$
 At the canonical state
 
 $$
-A=0.6,\qquadB=0.4,
+A = 0.6, \quad B = 0.4,
 $$
 
 the engine returns approximately
