@@ -19,9 +19,9 @@ Its purpose is deliberately narrower than that of a physical application.
 
 The package receives an explicitly declared GEO state,
 
-\[
+$$
 (\eta,L,\mu_{\mathrm{eff}}),
-\]
+$$
 
 evaluates the corresponding mathematical transformation, and exposes
 the resulting radial, spectral, projected, reconstructed, and numerical
@@ -29,13 +29,9 @@ closure quantities through public C and Python interfaces.
 
 The core calculation may be summarized as
 
-\[
-(\eta,L,\mu_{\mathrm{eff}})
-\longrightarrow
-\text{GEO External Operator}
-\longrightarrow
-(R,\Phi,\alpha,\text{projection},\text{reconstruction}).
-\]
+$$
+(\eta,L,\mu_{\mathrm{eff}})\longrightarrow\text{GEO External Operator}\longrightarrow(R,\Phi,\alpha,\text{projection},\text{reconstruction}).
+$$
 
 The operator is application-independent.
 
@@ -65,19 +61,15 @@ development environment.
 
 The distinction is:
 
-\[
-\text{GEO framework}
-\rightarrow
-\text{mathematical definitions},
-\]
+$$
+\text{GEO framework}\rightarrow\text{mathematical definitions},
+$$
 
 while
 
-\[
-\text{GEO External Operator}
-\rightarrow
-\text{executable realization}.
-\]
+$$
+\text{GEO External Operator}\rightarrow\text{executable realization}.
+$$
 
 Successful execution demonstrates implementation consistency.
 
@@ -90,11 +82,9 @@ physical interpretation.
 
 The public operator receives three principal state inputs:
 
-\[
-\boxed{
-\eta,\quad L,\quad \mu_{\mathrm{eff}}
-}
-\]
+$$
+\boxed{\eta,\quad L,\quad \mu_{\mathrm{eff}}}
+$$
 
 where:
 
@@ -105,21 +95,21 @@ where:
 
 For the canonical conservative GEO configuration,
 
-\[
+$$
 \eta=\frac35=0.6
-\]
+$$
 
 and frequently
 
-\[
+$$
 L=0.
-\]
+$$
 
 However, the API does not require
 
-\[
+$$
 \mu_{\mathrm{eff}}=\eta.
-\]
+$$
 
 This distinction is fundamental.
 
@@ -129,61 +119,57 @@ This distinction is fundamental.
 
 The GEO framework defines the normalized conservative architecture
 
-\[
+$$
 A+B+L=T,
-\]
+$$
 
 with
 
-\[
+$$
 T=1.
-\]
+$$
 
 For a supplied $\eta$,
 
-\[
+$$
 A=\eta
-\]
+$$
 
 and
 
-\[
+$$
 B=1-\eta-L.
-\]
+$$
 
 In the canonical lossless state,
 
-\[
+$$
 L=0,
-\]
+$$
 
 so
 
-\[
+$$
 A+B=1.
-\]
+$$
 
 At
 
-\[
+$$
 \eta=\frac35,
-\]
+$$
 
 the canonical partition is
 
-\[
-A=\frac35,
-\qquad
-B=\frac25.
-\]
+$$
+A=\frac35,\qquadB=\frac25.
+$$
 
 Numerically,
 
-\[
-A=0.6,
-\qquad
-B=0.4.
-\]
+$$
+A=0.6,\qquadB=0.4.
+$$
 
 ---
 
