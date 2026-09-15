@@ -162,13 +162,13 @@ $$
 the canonical partition is
 
 $$
-A=\frac35,\qquadB=\frac25.
+A = \frac{3}{5}, \quad B = \frac{2}{5}.
 $$
 
 Numerically,
 
 $$
-A=0.6,\qquadB=0.4.
+A = 0.6, \quad B = 0.4.
 $$
 
 ---
@@ -199,7 +199,7 @@ It is not a Hubble-specific parameter.
 The current GEO radial/effective-state relation is
 
 $$
-\boxed{R^3=\mu_{\mathrm{eff}}
+\boxed{R^3 = \mu_{\mathrm{eff}}}
 $$
 
 or equivalently
@@ -285,19 +285,19 @@ The operator contains the canonical GEO projective layer.
 For the conservative observable/complementary pair,
 
 $$
-\mathbf v=\begin{pmatrix}A\\B\end{pmatrix},
+\mathbf{v} = \begin{pmatrix} A \\ B \end{pmatrix},
 $$
 
 the canonical orthogonal transformation is associated with
 
 $$
-\theta=\frac{\pi}{4}.
+\theta = \frac{\pi}{4}.
 $$
 
 It can be written
 
 $$
-\boxed{Q=\frac1{\sqrt2}\begin{pmatrix}1&1\\-1&1\end{pmatrix}.}
+Q = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & 1 \\ -1 & 1 \end{pmatrix}.
 $$
 
 The projected pair is
