@@ -177,21 +177,15 @@ $$
 
 The GEO coupling amplitude is defined by
 
-\[
-\boxed{
-f_c=\sqrt{\eta}.
-}
-\]
+$$
+\boxed{f_c=\sqrt{\eta}.}
+$$
 
 For the canonical state,
 
-\[
-f_c
-=
-\sqrt{\frac35}
-=
-0.774596669241483\ldots
-\]
+$$
+f_c=\sqrt{\frac35}=0.774596669241483\ldots
+$$
 
 The implementation evaluates this quantity from the supplied structural
 state.
@@ -204,42 +198,37 @@ It is not a Hubble-specific parameter.
 
 The current GEO radial/effective-state relation is
 
-\[
-\boxed{
-R^3=\mu_{\mathrm{eff}}
-\]
+$$
+\boxed{R^3=\mu_{\mathrm{eff}}
+$$
 
 or equivalently
 
-\[
-\boxed{
-R=\mu_{\mathrm{eff}}^{1/3}.
-}
-\]
+$$
+\boxed{R=\mu_{\mathrm{eff}}^{1/3}.}
+$$
 
 This is the general radial law implemented by the public operator.
 
 The structural parameter
 
-\[
+$$
 \eta
-\]
+$$
 
 and the effective application state
 
-\[
+$$
 \mu_{\mathrm{eff}}
-\]
+$$
 
 are distinct quantities.
 
 Therefore,
 
-\[
-\boxed{
-\mu_{\mathrm{eff}}\neq\eta
-}
-\]
+$$
+\boxed{\mu_{\mathrm{eff}}\neq\eta}
+$$
 
 in general.
 
@@ -267,21 +256,21 @@ are independent arguments to the public computation interface.
 
 Consequently, one may hold
 
-\[
+$$
 \eta=0.6
-\]
+$$
 
 fixed while changing
 
-\[
+$$
 \mu_{\mathrm{eff}}.
-\]
+$$
 
 The corresponding radial quantity
 
-\[
+$$
 R=\mu_{\mathrm{eff}}^{1/3}
-\]
+$$
 
 changes accordingly.
 
@@ -295,90 +284,71 @@ The operator contains the canonical GEO projective layer.
 
 For the conservative observable/complementary pair,
 
-\[
-\mathbf v=
-\begin{pmatrix}
-A\\
-B
-\end{pmatrix},
-\]
+$$
+\mathbf v=\begin{pmatrix}A\\B\end{pmatrix},
+$$
 
 the canonical orthogonal transformation is associated with
 
-\[
+$$
 \theta=\frac{\pi}{4}.
-\]
+$$
 
 It can be written
 
-\[
-\boxed{
-Q=
-\frac1{\sqrt2}
-\begin{pmatrix}
-1&1\\
--1&1
-\end{pmatrix}.
-}
-\]
+$$
+\boxed{Q=\frac1{\sqrt2}\begin{pmatrix}1&1\\-1&1\end{pmatrix}.}
+$$
 
 The projected pair is
 
-\[
+$$
 \mathbf v'=Q\mathbf v.
-\]
+$$
 
 Thus
 
-\[
-A'
-=
-\frac{A+B}{\sqrt2},
-\]
+$$
+A'=\frac{A+B}{\sqrt2},
+$$
 
 and
 
-\[
-B'
-=
-\frac{B-A}{\sqrt2}
-\]
+$$
+B'=\frac{B-A}{\sqrt2}
+$$
 
 for the canonical orientation.
 
 For the lossless state,
 
-\[
+$$
 A+B=1,
-\]
+$$
 
 which gives
 
-\[
-\boxed{
-A'=\frac1{\sqrt2}.
-}
-\]
+$$
+\boxed{A'=\frac1{\sqrt2}.}
+$$
 
 At the canonical state
 
-\[
-A=0.6,
-\qquad
-B=0.4,
-\]
+$$
+A=0.6,\qquadB=0.4,
+$$
 
 the engine returns approximately
 
-\[
+$$
 A'=0.7071067811865475
-\]
+$$
 
 and
 
-\[
+$$
 B'=-0.1414213562373095.
-\]
+$$
 
 ---
 
@@ -386,9 +356,9 @@ B'=-0.1414213562373095.
 
 The canonical operator satisfies
 
-\[
+$$
 Q^TQ=I.
-\]
+$$
 
 Therefore the complete projected state preserves the Euclidean norm.
 
@@ -407,9 +377,9 @@ the implementation uses floating-point arithmetic.
 
 Because the canonical projection is orthogonal,
 
-\[
+$$
 Q^{-1}=Q^T.
-\]
+$$
 
 The complete projected pair can therefore be mapped back to the original
 state.
@@ -438,38 +408,34 @@ realization used by the engine.
 
 Among the exposed quantities are
 
-\[
+$$
 \Phi
-\]
+$$
 
 and
 
-\[
+$$
 \alpha.
-\]
+$$
 
 The spectral quantity is associated with the declared transport
 operator through
 
-\[
-\boxed{
-\Phi=\rho(M_5),
-}
-\]
+$$
+\boxed{\Phi=\rho(M_5),}
+$$
 
 where
 
-\[
+$$
 \rho(M_5)=\max_i|\lambda_i|.
-\]
+$$
 
 A corresponding coefficient is evaluated as
 
-\[
-\boxed{
-\alpha=\frac{\Phi B}{\sqrt2}.
-}
-\]
+$$
+\boxed{\alpha=\frac{\Phi B}{\sqrt2}.}
+$$
 
 These quantities are deterministic outputs of the declared operator
 state.
@@ -580,9 +546,9 @@ The demonstration reports:
 
 The demo explicitly checks
 
-\[
+$$
 \left|R^3-\mu_{\mathrm{eff}}\right|
-\]
+$$
 
 and requires the radial identity to close within the declared numerical
 tolerance.
@@ -598,15 +564,15 @@ directly.
 
 For example, keep
 
-\[
+$$
 \eta=0.6
-\]
+$$
 
 and
 
-\[
+$$
 L=0
-\]
+$$
 
 fixed.
 
@@ -614,35 +580,27 @@ Then evaluate different effective states.
 
 For
 
-\[
+$$
 \mu_{\mathrm{eff}}=0.6,
-\]
+$$
 
 the radial response is
 
-\[
-R
-=
-0.6^{1/3}
-=
-0.843432665301749\ldots
-\]
+$$
+R=0.6^{1/3}=0.843432665301749\ldots
+$$
 
 whereas for
 
-\[
+$$
 \mu_{\mathrm{eff}}=0.8104,
-\]
+$$
 
 the radial response becomes
 
-\[
-R
-=
-0.8104^{1/3}
-=
-0.932323170115423\ldots
-\]
+$$
+R=0.8104^{1/3}=0.932323170115423\ldots
+$$
 
 The structural parameter $\eta$ has not changed.
 
@@ -655,55 +613,51 @@ and effective-state layers.
 
 A canonical engine call may use
 
-\[
+$$
 \eta=0.6,
-\]
+$$
 
-\[
+$$
 L=0,
-\]
+$$
 
 and an independently supplied
 
-\[
+$$
 \mu_{\mathrm{eff}}.
-\]
+$$
 
 For
 
-\[
+$$
 \mu_{\mathrm{eff}}=0.6,
-\]
+$$
 
 the public operator gives
 
-\[
+$$
 R=0.843432665301749\ldots
-\]
+$$
 
 with
 
-\[
+$$
 R^3-\mu_{\mathrm{eff}}
-\]
+$$
 
 at floating-point closure.
 
 For the same structural state, the canonical projection returns
 
-\[
-A'
-\simeq
-0.7071067811865475
-\]
+$$
+A'\simeq0.7071067811865475
+$$
 
 and
 
-\[
-B'
-\simeq
--0.1414213562373094.
-\]
+$$
+B'\simeq-0.1414213562373094.
+$$
 
 These values arise from the declared mathematical operator and are not
 introduced as fitted observational targets.
@@ -728,15 +682,9 @@ defines how its physical quantities are mapped into the operator.
 
 The architecture is therefore
 
-\[
-\text{physical application}
-\rightarrow
-\mu_{\mathrm{eff}}
-\rightarrow
-\text{GEO External Operator}
-\rightarrow
-\text{mathematical response}.
-\]
+$$
+\text{physical application}\rightarrow\mu_{\mathrm{eff}}\rightarrow\text{GEO External Operator}\rightarrow\text{mathematical response}.
+$$
 
 The physical validity of the first mapping must be tested separately.
 
@@ -775,15 +723,15 @@ application quantities externally.
 
 This modularity is useful for reproducibility because it separates
 
-\[
+$$
 \text{external solver}
-\]
+$$
 
 from
 
-\[
+$$
 \text{GEO operator}.
-\]
+$$
 
 CLASS provenance associated with earlier interoperability experiments is
 retained under
@@ -847,9 +795,9 @@ The GEO operator is evaluated in floating-point arithmetic.
 Therefore quantities expected analytically to vanish may return small
 residual values such as
 
-\[
+$$
 10^{-16}
-\]
+$$
 
 or similar machine-scale errors.
 
@@ -885,15 +833,9 @@ questions.
 
 The project is organized around a simple reproducibility boundary:
 
-\[
-\boxed{
-\text{inputs}
-\rightarrow
-\text{operator}
-\rightarrow
-\text{outputs}
-}
-\]
+$$
+\boxed{\text{inputs}\rightarrow\text{operator}\rightarrow\text{outputs}}
+$$
 
 The user should be able to identify:
 
@@ -991,11 +933,9 @@ After installation, a minimal verification is:
 
 The expected radial identity is
 
-\[
-R^3
-\simeq
-\mu_{\mathrm{eff}}
-\]
+$$
+R^3\simeq\mu_{\mathrm{eff}}
+$$
 
 to floating-point precision.
 
@@ -1075,63 +1015,51 @@ See:
 
 GEO External Operator implements a general executable GEO state
 
-\[
-\boxed{
-(\eta,L,\mu_{\mathrm{eff}})
-}
-\]
+$$
+\boxed{(\eta,L,\mu_{\mathrm{eff}})}
+$$
 
 with structural coupling
 
-\[
-\boxed{
-f_c=\sqrt{\eta},
-}
-\]
+$$
+\boxed{f_c=\sqrt{\eta},}
+$$
 
 general radial response
 
-\[
-\boxed{
-R=\mu_{\mathrm{eff}}^{1/3},
-}
-\]
+$$
+\boxed{R=\mu_{\mathrm{eff}}^{1/3},}
+$$
 
 canonical orthogonal projection,
 
-\[
-\boxed{
-Q^TQ=I,
-}
-\]
+$$
+\boxed{Q^TQ=I,}
+$$
 
 forward and inverse reconstruction, spectral evaluation,
 
-\[
-\boxed{
-\Phi=\rho(M_5),
-}
-\]
+$$
+\boxed{\Phi=\rho(M_5),}
+$$
 
 and derived coefficient
 
-\[
-\boxed{
-\alpha=\frac{\Phi B}{\sqrt2}.
-}
-\]
+$$
+\boxed{\alpha=\frac{\Phi B}{\sqrt2}.}
+$$
 
 The structural parameter
 
-\[
+$$
 \eta
-\]
+$$
 
 and the effective application state
 
-\[
+$$
 \mu_{\mathrm{eff}}
-\]
+$$
 
 remain distinct.
 
@@ -1140,12 +1068,6 @@ embedded into its general mathematical definition.
 
 The present repository therefore serves as the public executable bridge
 
-\[
-\boxed{
-\text{GEO mathematics}
-\longrightarrow
-\text{reproducible operator}
-\longrightarrow
-\text{application-specific tests}.
-}
-\]
+$$
+\boxed{\text{GEO mathematics}\longrightarrow\text{reproducible operator}\longrightarrow\text{application-specific tests}.}
+$$
